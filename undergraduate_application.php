@@ -1,140 +1,175 @@
-<?php
-include("header.php")
-?>
+<?php include("header.php") ?>
 
-<!-- <div class="container">
-    <div class="row justify-content-evenly">
-        <div class="col-4">
-            <img src="images\lgbtqcropped.jpg" width="200" alt="">
+<!-- Section: Work With Us -->
+<section class="text-center">
+    <!-- Background image -->
+    <div class="p-5 bg-image" style="background-image: url('images/lgbtqcropped.jpg'); height: 300px;"></div>
+    <!-- Background image -->
+    <div class="card mx-4 mx-md-5 shadow-5-strong" style="margin-top: -100px; background: hsla(0, 0%, 100%, 0.8); backdrop-filter: blur(30px);">
+        <div class="card-body py-5 px-md-5">
+            <div class="row d-flex justify-content-center">
+                <div class="col-lg-8">
+                    <h2 class="fw-bold mb-5">WORK WITH US</h2>
+
+                    <form enctype="multipart/form-data" method="POST" action="undergraduate_application.php">
+                        <!-- 2 column grid layout with text inputs for the first and last names -->
+                        <div class="row">
+                            <div class="col-md-6 mb-4">
+                                <div class="form-outline">
+                                    <input type="text" name="first_name" id="validationDefault01" class="form-control" required />
+                                    <label class="form-label" for="validationDefault01">First name</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <div class="form-outline">
+                                    <input type="text" name="last_name" id="validationDefault02" class="form-control" required />
+                                    <label class="form-label" for="validationDefault02">Last name</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ID Number -->
+                        <div class="form-outline mb-4">
+                            <input type="tel" name="national_id" id="validationDefault03" placeholder="" class="form-control" required />
+                            <label class="form-label" for="validationDefault03">National ID Number</label>
+                        </div>
+
+                        <!-- DOB -->
+                        <div class="form-outline mb-4">
+                            <input type="date" name="date_of_birth" id="validationDefault04" placeholder="" class="form-control" required />
+                            <label class="form-label" for="validationDefault04">DATE OF BIRTH</label>
+                        </div>
+
+                        <!-- Gender -->
+                        <div class="mb-4">
+                            <label for="inputState1" class="form-label">Gender</label>
+                            <select id="inputState1" class="form-select" name="gender">
+                                <option selected>--SELECT--</option>
+                                <option>MALE</option>
+                                <option>FEMALE</option>
+                                <option>OTHER</option>
+                            </select>
+                        </div>
+
+                        <!-- Email input -->
+                        <div class="form-outline mb-4">
+                            <input type="email" name="email_address" id="validationDefault05" class="form-control" required />
+                            <label class="form-label" for="validationDefault05">Email address</label>
+                        </div>
+
+                        <!-- Phone Number -->
+                        <div class="form-outline mb-4">
+                            <input type="tel" name="phone_number" id="validationDefault06" placeholder="254" class="form-control" required />
+                            <label class="form-label" for="validationDefault06">Phone Number</label>
+                        </div>
+
+                        <!-- do you have a laptop -->
+                        <div class="mb-4">
+                            <label for="inputState2" class="form-label">Do you have a laptop?</label>
+                            <select id="inputState2" class="form-select" name="laptop">
+                                <option selected>--SELECT--</option>
+                                <option>YES</option>
+                                <option>NO</option>
+                            </select>
+                        </div>
+
+                        <!-- proficiency -->
+                        <div class="mb-4">
+                            <label for="inputState3" class="form-label">What area are proficient in?</label>
+                            <select id="inputState3" class="form-select" name="proficiency">
+                                <option selected>--SELECT--</option>
+                                <option>DEPRESSION</option>
+                                <option>ANXIETY</option>
+                                <option>LGBTQ+</option>
+                                <option>GRIEF</option>
+                                <option>MARRIAGE AND FAMILY</option>
+                            </select>
+                        </div>
+
+                        <!-- willing to work 24hrs -->
+                        <div class="mb-4">
+                            <label for="inputState4" class="form-label">Are you willing to work on a 24 hour basis?</label>
+                            <select id="inputState4" class="form-select" name="work_hours">
+                                <option selected>--SELECT--</option>
+                                <option>YES</option>
+                                <option>NO</option>
+                            </select>
+                        </div>
+
+                        <!-- Motivation -->
+                        <div class="form-outline mb-4">
+                            <textarea class="form-control" name="motivation" aria-label="With textarea" placeholder="Not more than 250 words"></textarea>
+                            <label class="form-label" for="form3Example3">Motivation</label>
+                        </div>
+
+                        <!-- CV Input -->
+                        <label for="inputGroupFile02" class="form-label my-2 visually-hidden">Profile Photo</label>
+                        <div class="input-group mb-4">
+                            <input type="hidden" name="MAX_FILE_SIZE" value="3000000">
+                            <input type="file" name="userfile" class="form-control" id="inputGroupFile02">
+                            <label class="input-group-text" for="inputGroupFile02">Upload CV</label>
+                        </div>
+
+                        <!-- Submit button -->
+                        <button type="submit" name="submit" class="btn btn-success btn-block mb-4">
+                            SUBMIT APPLICATION
+                        </button>
+
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
-</div> -->
+</section>
+<!-- Section: Work With Us -->
 
-<div class="container-fluid application-container">
-    <div class="row justify-content-evenly">
-        <div class="col-6">
-            <form class="row g-3 application_form bg-light shadow rounded my-5" action="undergraduate_application.php" enctype="multipart/form-data" method="POST">
-                <div class="col">
-                    <label for="first_name" class="form-label">First Name</label>
-                    <input type="text" name="first_name" class="form-control" id="first_name">
-                </div>
-                <div class="col-12">
-                    <label for="last_name" class="form-label">Last Name</label>
-                    <input type="text" name="last_name" class="form-control" id="last_name" placeholder="">
-                </div>
-
-                <div class="col-12">
-                    <label for="inputAddress" class="form-label">Date of Birth</label>
-                    <input type="date" name="date_of_birth" class="form-control" id="age" placeholder="">
-                </div>
-
-                <div class="col">
-                    <label for="inputState2" class="form-label">Gender</label>
-                    <select id="inputState2" name="gender" class="form-select">
-                    <option selected>Choose...</option>
-                    <option>Male</option>
-                    <option>Female</option>
-                    <option>Prefer Not to Say</option>
-                    </select>
-                </div>
-                <div></div>
-                <div class="col">
-                    <label for="inputEmail4" class="form-label">Email</label>
-                    <input type="email" name="email_addr" class="form-control" id="inputEmail4">
-                </div>
-                <div class="col-12">
-                    <label for="inputAddress" class="form-label">National ID</label>
-                    <input type="text" name="national_id" class="form-control" id="id" placeholder="">
-                </div>
-
-                <div class="input-group">
-                    <span class="input-group-text">Motivation</span>
-                    <textarea class="form-control" name="motivation" aria-label="With textarea" placeholder="Not more than 250 words"></textarea>
-                </div>
-
-                <div>
-                    <div>
-                        <label for="q1">Are willing to be working on a 24 hr basis?</label>
-                    </div>
-                    <span class="form-check form-check-inline" id="q1">
-                        <input class="form-check-input" type="radio" name="question_a" value="Yes" id="inlineRadio1">
-                        <label class="form-check-label" for="inlineRadio1">Yes</label>
-                    </span>
-                    <span class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="question_a" value="No" id="inlineRadio2">
-                        <label class="form-check-label" for="inlineRadio2">No</label>
-                    </span>
-                </div>
-
-                <div>
-                    <div>
-                        <label for="q1">Do you have a laptop?</label>
-                    </div>
-                    <span class="form-check form-check-inline" id="q2">
-                        <input class="form-check-input" type="radio" name="question_b"  value="Yes"id="inlineRadio3">
-                        <label class="form-check-label" for="inlineRadio3">Yes</label>
-                    </span>
-                    <span class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="question_b" value="No" id="inlineRadio4">
-                        <label class="form-check-label" for="inlineRadio3">No</label>
-                    </span>
-                </div>
-
-                <div class="col-md-4">
-                    <label for="inputState1" class="form-label">Under which subcategory are you proficient with?</label>
-                    <select id="inputState1" class="form-select" name="question_c">
-                        <option selected>Choose...</option>
-                        <option>Depression</option>
-                        <option>Anxiety</option>
-                        <option>LGBTQ+</option>
-                        <option>Grief</option>
-                        <option>Marriage and Family</option>
-                    </select>
-                </div>
-
-                <div class="input-group mb-3">
-                    <input type="hidden" name="MAX_FILE_SIZE" value="3000000">
-                    <input type="file"  name="userfile" class="form-control" id="inputGroupFile02">
-                    <label class="input-group-text" for="inputGroupFile02">Upload CV</label>
-                </div>
-
-                <div class="col-12 my-2">
-                    <input type="submit" name="submit" class="btn btn-primary">
-                </div>
-                <div></div>
-            </form>
-        </div>
-    </div>
-</div>
 <?php
-
 include("connect.php");
 
-if(isset($_POST['submit'])){
-    $f_name = $_POST['first_name'];
-    $l_name = $_POST['last_name'];
-    $dob = $_POST['date_of_birth'];
-    $gender = $_POST['gender'];
-    $email = $_POST['email_addr'];
+if (isset($_POST['submit'])) {
+    // get user data from the form and sanitize
+    $first_name = $_POST['first_name'];
+    $last_name = $_POST['last_name'];
     $national_id = $_POST['national_id'];
-    $resume = $_FILES['userfile']['name'];
+    $date_of_birth = $_POST['date_of_birth'];
+    $gender = $_POST['gender'];
+    $email_address = $_POST['email_address'];
+    $phone_number = $_POST['phone_number'];
+    $laptop = $_POST['laptop'];
+    $proficiency = $_POST['proficiency'];
+    $work_hours = $_POST['work_hours'];
     $motivation = $_POST['motivation'];
-    $q1 = $_POST['question_a'];
-    $q2 = $_POST['question_b'];
-    $q3 = $_POST['question_c'];
+    $resume = $_FILES['userfile']['name'];
 
-    $application_status = insert_into_jobapplication($f_name, $l_name, $dob, $gender, $email, $national_id, $resume, $motivation, $q1, $q2, $q3);
-    if ($application_status){
+    // upload resume
+    $uploads_dir = "resumes/";
+    $destination = $uploads_dir . $_FILES['userfile']['name'];
+    $status = move_uploaded_file($_FILES['userfile']['tmp_name'], $destination);
+
+    // save user data into job application table
+    $status = insert_into_jobapplication(
+        $first_name,
+        $last_name,
+        $national_id,
+        $date_of_birth,
+        $gender,
+        $email_address,
+        $phone_number,
+        $laptop,
+        $proficiency,
+        $work_hours,
+        $motivation,
+        $resume
+    );
+    echo $db->error;
+
+    // appropriate message depending on the status
+    if ($status) {
         echo $application_success;
-    }
-    else {
+    } else {
         echo $application_fail;
     }
-
-    $uploads_dir = "resumes/";
-    $destination = $uploads_dir.$_FILES['userfile']['name'];
-    $status = move_uploaded_file($_FILES['userfile']['tmp_name'], $destination);
-} 
+}
 
 include("footer.php")
 ?>
