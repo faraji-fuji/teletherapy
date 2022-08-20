@@ -30,7 +30,8 @@ laptop VARCHAR(10),
 proficiency VARCHAR(50),
 work_hours VARCHAR(10),
 motivation VARCHAR(300),
-`resume` VARCHAR(100)
+`resume` VARCHAR(100),
+`status` INT
 )";
 
 //connection to the database
@@ -47,7 +48,7 @@ function insert_into_client(
     $email_address,
     $password
 ) {
-    global $db, $signup_success, $signup_fail;
+    global $db;
     $result = $db->query(
         "INSERT INTO `client` (
         `first_name`, 
@@ -92,7 +93,8 @@ function insert_into_jobapplication(
         `proficiency`,
         `work_hours`,
         `motivation`, 
-        `resume`
+        `resume`,
+        `status`
         ) VALUES (
             '$first_name',
             '$last_name',
@@ -105,7 +107,8 @@ function insert_into_jobapplication(
             '$proficiency',
             '$work_hours',
             '$motivation',
-            '$resume'
+            '$resume',
+            0
             )"
     );
     return $result;
