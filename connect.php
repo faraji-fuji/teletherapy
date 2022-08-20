@@ -115,9 +115,9 @@ function insert_into_jobapplication(
 function  verify_user($submitted_email, $submitted_password)
 {
     global $db;
-    $result = $db->query("SELECT * FROM `signup` WHERE email = '$submitted_email'");
+    $result = $db->query("SELECT * FROM `client` WHERE `email_address` = '$submitted_email'");
     $row = $result->fetch_assoc();
-    if ($submitted_password == $row['user_password']) {
+    if ($submitted_password == $row['password']) {
         return 1;
     } else return 0;
 }
