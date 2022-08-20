@@ -111,7 +111,7 @@
                         </div>
 
                         <!-- Submit button -->
-                        <button type="submit" name="submit" class="btn btn-success btn-block mb-4">
+                        <button type="submit" name="submit" class="btn btn-primary btn-block mb-4">
                             SUBMIT APPLICATION
                         </button>
 
@@ -124,7 +124,6 @@
 <!-- Section: Work With Us -->
 
 <?php
-include("connect.php");
 
 if (isset($_POST['submit'])) {
     // get user data from the form and sanitize
@@ -161,7 +160,6 @@ if (isset($_POST['submit'])) {
         $motivation,
         $resume
     );
-    echo $db->error;
 
     // appropriate message depending on the status
     if ($status) {

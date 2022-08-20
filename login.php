@@ -1,5 +1,5 @@
 <?php
-    include("header.php")
+include("header.php")
 ?>
 <div class="container my-4 ">
     <div class="row justify-content-evenly">
@@ -20,23 +20,21 @@
     </div>
 </div>
 <?php
-    include("connect.php");
 
-    if(isset($_POST['submit'])){
-        $submitted_email = $_POST['email_address'];
-        $submitted_password = $_POST['user_password'];
+if (isset($_POST['submit'])) {
+    $submitted_email = $_POST['email_address'];
+    $submitted_password = $_POST['user_password'];
 
-        // verify user
-        $verification_status = verify_user($submitted_email, $submitted_password);
-        if ($verification_status){
-            echo '<script type="text/javascript">';
-            echo 'window.location.href = "index_member.php"';
-            echo '</script>';
-        }
-        else {
-            echo $login_fail;
-        }
+    // verify user
+    $verification_status = verify_user($submitted_email, $submitted_password);
+    if ($verification_status) {
+        echo '<script type="text/javascript">';
+        echo 'window.location.href = "index_member.php"';
+        echo '</script>';
+    } else {
+        echo $login_fail;
     }
+}
 
-    include("footer.php")
+include("footer.php")
 ?>

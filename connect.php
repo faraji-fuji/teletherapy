@@ -41,24 +41,24 @@ $db->query($query_create_table_signup);
 $db->query($query_create_table_job_application);
 
 //functions to insert data into the relevant tables
-function insert_into_signup(
-    $f_name,
-    $l_name,
-    $email_addr,
-    $user_password
+function insert_into_client(
+    $first_name,
+    $last_name,
+    $email_address,
+    $password
 ) {
     global $db, $signup_success, $signup_fail;
     $result = $db->query(
-        "INSERT INTO `signup` (
+        "INSERT INTO `client` (
         `first_name`, 
         `last_name`, 
-        `email`, 
-        `user_password`
+        `email_address`, 
+        `password`
         ) VALUES(
-            '$f_name', 
-            '$l_name', 
-            '$email_addr', 
-            '$user_password'
+            '$first_name', 
+            '$last_name', 
+            '$email_address', 
+            '$password'
             )"
     );
     return $result;

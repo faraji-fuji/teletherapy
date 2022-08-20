@@ -1,7 +1,10 @@
 <!doctype html>
 <html lang="en">
 
-<?php include("head.php") ?>
+<?php
+include("head.php");
+include("connect.php");
+?>
 
 <body>
     <header class="p-3 text-dark nav shadow" style="background-color: #e3f2fd;">

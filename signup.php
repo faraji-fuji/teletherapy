@@ -1,76 +1,19 @@
 <?php
 include("header.php")
 ?>
-<!-- <div class="container my-4 shadow">
-    <div class="row justify-content-evenly">
-        <div class="col-7">
-            <form action="signup.php" method="POST">
-                <div class="mb-3 my-4">
-                    <label for="formGroupExampleInput" class="form-label">First Name</label>
-                    <input type="text" class="form-control" name="first_name" id="formGroupExampleInput" placeholder="E.g. John">
-                </div>
-                <div class="mb-3">
-                    <label for="formGroupExampleInput2" class="form-label">Last Name</label>
-                    <input type="text" class="form-control" name="last_name" id="formGroupExampleInput2" placeholder="E.g. Doe">
-                </div>
-                <div class="mb-3">
-                    <label for="inputEmail4" class="form-label">Email</label>
-                    <input type="email" class="form-control" name="email_address" id="inputEmail4">
-                </div>
-                <div class="mb-3">
-                    <label for="inputPassword4" class="form-label">Password</label>
-                    <input type="password" class="form-control" name="user_password" id="inputPassword4">
-                </div>
-                <div class="mb-3">
-                    <label for="inputPassword4" class="form-label">Confirm Password</label>
-                    <input type="password" class="form-control" name="confirm_password" id="inputPassword4">
-                </div>
-                <div class="col-12">
-                    <button type="submit" name="sign_up" class="btn btn-primary">Sign up</button>
-                </div>
-                <div class="my-4"></div>
-            </form>
-        </div>
-        <div class="col">
-            <img src="images\sydney-rae-geM5lzDj4Iw-unsplash.jpg" width="450" alt="">
-        </div>
-    </div>
-</div> -->
 
-<?php
-// include("connect.php");
-// if (isset($_POST['sign_up'])) {
-//     $f_name = $_POST['first_name'];
-//     $l_name = $_POST['last_name'];
-//     $email_addr = $_POST['email_address'];
-//     $user_password = $_POST['user_password'];
-
-//     $signup_status = insert_into_signup($f_name, $l_name, $email_addr, $user_password);
-//     if ($signup_status) {
-//         echo $signup_success;
-//     } else {
-//         echo $signup_fail;
-//     }
-// }
-
-// include("footer.php")
-?>
-
-
-<!-- new signup -->
-
-<?php include("head.php") ?>
-
-<!-- Section: Design Block -->
+<!-- Section: Sign Up -->
 <section class="text-center">
+
     <!-- Background image -->
-    <div class="p-5 bg-image" style="background-image: url('assets/images/thomas-le-pRJhn4MbsMM-unsplash.jpg'); height: 300px;"></div>
+    <div class="p-5 bg-image" style="background-image: url('images/lgbtqcropped.jpg'); height: 300px;"></div>
     <!-- Background image -->
+
     <div class="card mx-4 mx-md-5 shadow-5-strong" style="margin-top: -100px; background: hsla(0, 0%, 100%, 0.8); backdrop-filter: blur(30px);">
         <div class="card-body py-5 px-md-5">
             <div class="row d-flex justify-content-center">
                 <div class="col-lg-8">
-                    <h2 class="fw-bold mb-5">Sign up now</h2>
+                    <h2 class="fw-bold mb-5">Sign Up Now</h2>
 
                     <form enctype="multipart/form-data" method="POST" action="signup.php">
                         <!-- 2 column grid layout with text inputs for the first and last names -->
@@ -95,52 +38,9 @@ include("header.php")
                             <label class="form-label" for="validationDefault05">Email address</label>
                         </div>
 
-                        <!-- Member Type -->
-                        <div class="mb-4">
-                            <label for="inputState1" class="form-label"></label>
-                            <select id="inputState1" class="form-select" name="member_type">
-                                <option selected>Member Type</option>
-                                <option>Farmer</option>
-                                <option>Retailer</option>
-                                <option>Institution</option>
-                                <option>Customer</option>
-                            </select>
-                        </div>
-
-                        <!-- Physical location -->
-                        <div class="mb-4">
-                            <select id="inputState" class="form-select" name="user_location">
-                                <option selected>Location</option>
-                                <option>Nyawita</option>
-                                <option>Mabungo</option>
-                                <option>Lela</option>
-                                <option>Ekwanda</option>
-                            </select>
-                        </div>
-
-                        <!-- Nearest Landmark -->
-                        <div class="form-outline mb-4">
-                            <input type="text" name="physical_address" id="validationDefault03" class="form-control" />
-                            <label class="form-label" for="form3Example3">Nearest Landmark</label>
-                        </div>
-
-                        <!-- Phone Number -->
-                        <div class="form-outline mb-4">
-                            <input type="tel" name="phone_number" id="validationDefault06" placeholder="254" class="form-control" required />
-                            <label class="form-label" for="validationDefault06">Phone Number</label>
-                        </div>
-
-                        <!-- Profile Photo Input -->
-                        <label for="inputGroupFile02" class="form-label my-2 visually-hidden">Profile Photo</label>
-                        <div class="input-group mb-4">
-                            <input type="hidden" name="MAX_FILE_SIZE" value="3000000">
-                            <input type="file" name="userfile" class="form-control" id="inputGroupFile02">
-                            <label class="input-group-text" for="inputGroupFile02">Upload Profile Photo</label>
-                        </div>
-
                         <!-- Password input -->
                         <div class="form-outline mb-4">
-                            <input type="password" name="user_password" id="validationDefault07" class="form-control" required />
+                            <input type="password" name="password" id="validationDefault07" class="form-control" required />
                             <label class="form-label" for="validationDefault07">Password</label>
                         </div>
 
@@ -149,10 +49,8 @@ include("header.php")
                             <label class="form-label" for="validationDefault08">Repeat Password</label>
                         </div>
 
-
-
                         <!-- Submit button -->
-                        <button type="submit" name="register" class="btn btn-success btn-block mb-4">
+                        <button type="submit" name="sign_up" class="btn btn-primary btn-block mb-4">
                             Sign up
                         </button>
 
@@ -165,67 +63,29 @@ include("header.php")
         </div>
     </div>
 </section>
-<!-- Section: Design Block -->
-
+<!-- Section: Sign Up -->
 
 <?php
 
-include("connect.php");
-
-if (isset($_POST["register"])) {
-    //please sanitize user input
+if (isset($_POST['sign_up'])) {
     $first_name = $_POST['first_name'];
     $last_name = $_POST['last_name'];
     $email_address = $_POST['email_address'];
-    $physical_address = $_POST['physical_address'];
-    $member_type = $_POST['member_type'];
+    $password = $_POST['password'];
 
-    $phone_number = $_POST['phone_number'];
+    $signup_status = insert_into_client(
+        $first_name,
+        $last_name,
+        $email_address,
+        $password
+    );
 
-    $profile_photo = $_FILES['userfile']['name'];
-
-    $user_location = $_POST['user_location'];
-    $user_password = $_POST['user_password'];
-
-    // Handle Profile Photo Upload
-    $uploads_dir = "assets/avatars/";
-    $destination = $uploads_dir . $_FILES['userfile']['name'];
-    $status = move_uploaded_file($_FILES['userfile']['tmp_name'], $destination);
-    if ($status) {
-        // echo "file uploaded succesfuly";
+    if ($signup_status) {
+        echo $signup_success;
     } else {
-        // echo "file was not uploaded";
-    }
-
-    // save user data
-    // $insert_status = insert_into_user(
-    //     $first_name,
-    //     $last_name,
-    //     $email_address,
-    //     $physical_address,
-    //     $member_type,
-    //     $user_location,
-    //     $user_password,
-    //     $profile_photo,
-    //     $phone_number
-    // );
-
-    // create user cart 
-    // insert_into_cart($email_address);
-
-    // success message
-    if ($insert_status) {
-        echo "<script>";
-        echo "alert('Registered Successfuly. Please proceed to login')";
-        echo "</script>";
-        // echo "<script>";
-        // echo "location.assign('login.php')";
-        // echo "</script>";
-    } else {
-        echo "<script>";
-        echo "alert('Something went Wrong. Please Contact us for support. Thank You!')";
-        echo "</script>";
+        echo $signup_fail;
     }
 }
 
-include("footer.php") ?>
+include("footer.php")
+?>
