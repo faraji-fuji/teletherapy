@@ -1,4 +1,7 @@
-<?php include("header.php") ?>
+<?php
+include("header.php");
+include("navbar.php");
+?>
 
 <!-- Section: Login -->
 <section class="text-center text-lg-start">

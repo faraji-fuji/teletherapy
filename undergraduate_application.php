@@ -1,5 +1,3 @@
-<?php include("header.php") ?>
-
 <!-- Section: Work With Us -->
 <section class="text-center">
     <!-- Background image -->
@@ -168,6 +166,4 @@ if (isset($_POST['submit'])) {
         echo $application_fail;
     }
 }
-
-include("footer.php")
 ?>

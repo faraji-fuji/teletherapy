@@ -1,11 +1,21 @@
-/* body { 
-    background: url(../images/teletherapy.png) no-repeat center center fixed; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: auto;
-  } */
+.gradient-custom {
+  /* fallback for old browsers */
+  background: #fff1eb;
 
-  .connect-btn {
-    background-color: #E3F2FD;
-  }
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(to right, rgba(255, 241, 235, 0.5), rgba(172, 224, 249, 0.5));
+
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to right, rgba(255, 241, 235, 0.5), rgba(172, 224, 249, 0.5))
+}
+
+body{
+  /* fallback for old browsers */
+  background: #fff1eb;
+
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(to top, rgba(255, 241, 235, 0.5), rgba(172, 224, 249, 0.5));
+
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to top, rgba(255, 241, 235, 0.5), rgba(172, 224, 249, 0.5))
+}

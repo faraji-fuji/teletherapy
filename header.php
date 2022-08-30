@@ -1,38 +1,36 @@
 <!doctype html>
 <html lang="en">
 
-<?php
-include("head.php");
-include("connect.php");
-?>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS -->
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" />
+
+    <!-- Google Fonts -->
+    <!-- Nunito -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" />
+    <!-- Roboto -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" />
+
+    <!-- MDB -->
+    <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.2.0/mdb.min.css" rel="stylesheet" /> -->
+
+    <!-- MDB icon -->
+    <!-- <link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon" /> -->
+
+    <!-- MDB -->
+    <link rel="stylesheet" href="css/mdb.min.css" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/index.css">
+
+    <title>Teletherapy</title>
+</head>
+<?php include("connect.php"); ?>
 
 <body>
-    <header class="p-3 text-dark nav shadow" style="background-color: #e3f2fd;">
-        <div class="container">
-            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-                <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
-                    <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap">
-                        <use xlink:href="#bootstrap" />
-                    </svg>
-                </a>
-
-                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                    <li><a href="index.php" class="nav-link px-2 text-dark">Teletherapy</a></li>
-                    <li><a href="#" class="nav-link px-2 text-dark">Contact Us</a></li>
-                    <li><a href="#" class="nav-link px-2 text-dark">Therapy Types</a></li>
-                    <li><a href="undergraduate_application.php" class="nav-link px-2 text-dark">Work With Us</a></li>
-                    <li><a href="#" class="nav-link px-2 text-dark">FAQs</a></li>
-                    <li><a href="#" class="nav-link px-2 text-dark">About</a></li>
-                </ul>
-
-                <!-- <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
-            <input type="search" class="form-control form-control-dark text-white bg-dark" placeholder="Search..." aria-label="Search">
-            </form> -->
-
-                <div class="text-end">
-                    <a href="login.php"><button type="button" class="btn  btn-outline-primary me-2">Login</button></a>
-                    <a href="signup.php"> <button type="button" class="btn  btn-outline-primary">Sign-up</button></a>
-                </div>
-            </div>
-        </div>
-    </header>

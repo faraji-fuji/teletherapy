@@ -1,6 +1,5 @@
 <?php
-session_start();
 include("header.php");
 include("navbar.php");
-include("landing_page.php");
+include("undergraduate_application.php");
 include("footer.php");
