@@ -29,6 +29,7 @@
                             <li class="nav-item"> <a class="nav-link" href="index.php" aria-controls="#picker-editor">Teletherapy</a> </li>
                             <!-- <li class="nav-item"> <a class="nav-link" href="" aria-controls="#picker-editor">Team</a> </li> -->
                             <li class="nav-item"> <a class="nav-link" href="work.php" aria-controls="#picker-editor">Work</a> </li>
+                            <!-- <li class="nav-item"> <a class="nav-link" href="#our-services" aria-controls="#picker-editor">Services</a> </li> -->
                         </ul>
                         <!-- Left links -->
 

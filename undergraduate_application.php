@@ -81,6 +81,8 @@
                                 <option>LGBTQ+</option>
                                 <option>GRIEF</option>
                                 <option>MARRIAGE AND FAMILY</option>
+                                <option>WORK</option>
+
                             </select>
                         </div>
 

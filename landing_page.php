@@ -25,8 +25,8 @@
                                             <br>
                                             <span class="text-primary">Available Online</span>
                                         </h1>
-                                        <a class="btn  btn-primary btn-lg py-3 px-5 mb-2 mb-md-0 me-md-2" href="#" role="button" aria-controls="#picker-editor">Get started</a>
-                                        <a class="btn  btn-link btn-lg py-3 px-5 mb-2 mb-md-0" data-ripple-color="primary" href="#" role="button" aria-controls="#picker-editor">Learn more</a>
+                                        <a class="btn  btn-primary btn-lg py-3 px-5 mb-2 mb-md-0 me-md-2" href="signup.php" role="button" aria-controls="#picker-editor">Sign Up to Get started</a>
+                                        <a class="btn  btn-link btn-lg py-3 px-5 mb-2 mb-md-0" data-ripple-color="primary" href="#our-services" role="button" aria-controls="#picker-editor">Learn more</a>
                                     </div>
                                 </div>
                             </div>
@@ -37,7 +37,9 @@
             </div>
         </div>
 
-        <div style="position: relative;" data-draggable="true" draggable="false" class="">
+
+        <!-- Section: Our Services -->
+        <div style="position: relative;" data-draggable="true" draggable="false" class="" id="our-services">
             <!---->
             <!---->
             <section draggable="false" class="container pt-5" data-v-271253ee="">
@@ -52,7 +54,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Marriage and Family<br></h5>
                                     <p class="card-text">Ut pretium ultricies dignissim. Sed sit amet mi eget urna placerat vulputate. Ut vulputate est non quam dignissim elementum. Donec a ullamcorper diam.</p>
-                                    <a href="#!" class="btn btn-primary btn-rounded" aria-controls="#picker-editor" draggable="false">Find Therapist</a>
+                                    <a href="therapists.php?category=1" class="btn btn-primary btn-rounded" aria-controls="#picker-editor" draggable="false">Find Therapist</a>
                                 </div>
                             </div>
                         </div>
@@ -65,7 +67,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Depression</h5>
                                     <p class="card-text">Suspendisse in volutpat massa. Nulla facilisi. Sed aliquet diam orci, nec ornare metus semper sed. Integer volutpat ornare erat sit amet rutrum.</p>
-                                    <a href="#!" class="btn        btn-primary btn-rounded" aria-controls="#picker-editor" draggable="false">Find Therapist</a>
+                                    <a href="therapists.php?category=2" class="btn btn-primary btn-rounded" aria-controls="#picker-editor" draggable="false">Find Therapist</a>
                                 </div>
                             </div>
                         </div>
@@ -78,7 +80,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title">LGBTQ+</h5>
                                     <p class="card-text">Curabitur tristique, mi a mollis sagittis, metus felis mattis arcu, non vehicula nisl dui quis diam. Mauris ut risus eget massa volutpat feugiat. Donec.</p>
-                                    <a href="#!" class="btn btn-primary btn-rounded" aria-controls="#picker-editor" draggable="false">Find Therapist</a>
+                                    <a href="therapists.php?category=3" class="btn btn-primary btn-rounded" aria-controls="#picker-editor" draggable="false">Find Therapist</a>
                                 </div>
                             </div>
                         </div>
@@ -103,7 +105,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Anxiety</h5>
                                     <p class="card-text">Ut pretium ultricies dignissim. Sed sit amet mi eget urna placerat vulputate. Ut vulputate est non quam dignissim elementum. Donec a ullamcorper diam.</p>
-                                    <a href="#!" class="btn        btn-primary btn-rounded" aria-controls="#picker-editor" draggable="false">Find Therapist</a>
+                                    <a href="therapists.php?category=4" class="btn        btn-primary btn-rounded" aria-controls="#picker-editor" draggable="false">Find Therapist</a>
                                 </div>
                             </div>
                         </div>
@@ -116,7 +118,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Grief</h5>
                                     <p class="card-text">Suspendisse in volutpat massa. Nulla facilisi. Sed aliquet diam orci, nec ornare metus semper sed. Integer volutpat ornare erat sit amet rutrum.</p>
-                                    <a href="#!" class="btn btn-primary btn-rounded" aria-controls="#picker-editor" draggable="false">Find Therapist</a>
+                                    <a href="therapists.php?category=5" class="btn btn-primary btn-rounded" aria-controls="#picker-editor" draggable="false">Find Therapist</a>
                                 </div>
                             </div>
                         </div>
@@ -129,7 +131,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Work</h5>
                                     <p class="card-text">Curabitur tristique, mi a mollis sagittis, metus felis mattis arcu, non vehicula nisl dui quis diam. Mauris ut risus eget massa volutpat feugiat. Donec.</p>
-                                    <a href="#!" class="btn btn-primary btn-rounded" aria-controls="#picker-editor" draggable="false">Find Therapist</a>
+                                    <a href="therapists.php?category=6" class="btn btn-primary btn-rounded" aria-controls="#picker-editor" draggable="false">Find Therapist</a>
                                 </div>
                             </div>
                         </div>
