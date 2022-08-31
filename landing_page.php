@@ -4,9 +4,6 @@
     <div style="display: none;"></div>
     <div style="">
 
-
-
-
         <div id="preview" class="preview">
             <div style="display: none;"></div>
             <div>
@@ -20,7 +17,7 @@
                             <div class="container">
                                 <div class="card mx-4 mx-md-5 text-center shadow-5-strong" style=" margin-top: -170px; background: hsla(0, 0%, 100%, 0.5); backdrop-filter: blur(30px); ">
                                     <div class="card-body px-4 py-5 px-md-5">
-                                        <h1 class="display-3 fw-bold ls-tight mb-4">
+                                        <h1 class="display-5 fw-bold ls-tight mb-4">
                                             <span>Get Connected to Top Therapists</span>
                                             <br>
                                             <span class="text-primary">Available Online</span>
@@ -49,7 +46,7 @@
                         <div class="col-lg-4 col-md-12 mb-6 mb-lg-0">
                             <div class="card shadow-2-strong">
                                 <div class="bg-image hover-overlay ripple shadow-4-strong rounded mx-3" data-mdb-ripple-color="light" style="margin-top: -15px">
-                                    <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/002.webp" class="img-fluid" alt="" aria-controls="#picker-editor" draggable="false">
+                                    <img src="images/cropped.jpg" class="img-fluid" alt="" aria-controls="#picker-editor" draggable="false">
                                 </div>
                                 <div class="card-body">
                                     <h5 class="card-title">Marriage and Family<br></h5>
@@ -126,7 +123,7 @@
                         <div class="col-lg-4 mb-6 mb-lg-0">
                             <div class="card shadow-2-strong">
                                 <div class="bg-image hover-overlay ripple shadow-4-strong rounded mx-3" data-mdb-ripple-color="light" style="margin-top: -15px">
-                                    <img src="https://mdbcdn.b-cdn.net/img/new/standard/people/191.webp" class="img-fluid" alt="" aria-controls="#picker-editor" draggable="false">
+                                    <img src="images/cytonn-photography-n95VMLxqM2I-unsplash.jpg" class="img-fluid" alt="" aria-controls="#picker-editor" draggable="false">
                                 </div>
                                 <div class="card-body">
                                     <h5 class="card-title">Work</h5>

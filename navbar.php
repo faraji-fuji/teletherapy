@@ -2,10 +2,10 @@
     <!---->
     <!---->
     <section draggable="false" class="overflow-hidden pt-0" data-v-271253ee="">
-        <section class="" style="padding-bottom: 1px;">
+        <section class="">
 
             <!-- Navbar -->
-            <nav class="navbar navbar-expand-lg navbar-light bg-light gradient-custom shadow-2">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm gradient-custom">
                 <!-- Container wrapper -->
                 <div class="container-fluid">
                     <div class="d-flex">
@@ -29,7 +29,7 @@
                             <li class="nav-item"> <a class="nav-link" href="index.php" aria-controls="#picker-editor">Teletherapy</a> </li>
                             <!-- <li class="nav-item"> <a class="nav-link" href="" aria-controls="#picker-editor">Team</a> </li> -->
                             <li class="nav-item"> <a class="nav-link" href="work.php" aria-controls="#picker-editor">Work</a> </li>
-                            <!-- <li class="nav-item"> <a class="nav-link" href="#our-services" aria-controls="#picker-editor">Services</a> </li> -->
+                            <li class="nav-item"> <a class="nav-link" href="index.php#our-services" aria-controls="#picker-editor">Services</a> </li>
                         </ul>
                         <!-- Left links -->
 
