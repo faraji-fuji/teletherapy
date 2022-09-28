@@ -1,6 +1,9 @@
 <?php
 session_start();
+include("head.php");
 include("header.php");
-include("navbar.php");
-include("landing_page.php");
+include("cta.php");
+include("services.php");
+include("testimonials.php");
+include("contactUs.php");
 include("footer.php");
