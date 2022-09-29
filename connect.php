@@ -6,11 +6,11 @@ $db_name = "therapy";
 
 //initial connection to the database server
 $db_server = new mysqli($db_server_name, $db_user_name, $db_password);
-$db_server->query("CREATE DATABASE therapy");
+$db_server->query("CREATE DATABASE IF NOT EXISTS `therapy`");
 
 // mysql queries to create relevant tables
 // signup
-$query_create_table_signup = "CREATE TABLE client (
+$query_create_table_signup = "CREATE TABLE IF NOT EXISTS `client` (
     first_name VARCHAR(50),
     last_name VARCHAR(50),
     email_address VARCHAR(30) PRIMARY KEY,
@@ -18,7 +18,7 @@ $query_create_table_signup = "CREATE TABLE client (
     )";
 
 // job application
-$query_create_table_job_application = "CREATE TABLE job_application (
+$query_create_table_job_application = "CREATE TABLE IF NOT EXISTS `job_application` (
 first_name VARCHAR(50),
 last_name VARCHAR(50),
 national_id VARCHAR(12) PRIMARY KEY,
@@ -160,7 +160,7 @@ EOT;
 
 // service table
 // create service table
-$sql = "CREATE TABLE `service` (
+$sql = "CREATE TABLE IF NOT EXISTS `service` (
     `id` INT AUTO_INCREMENT PRIMARY KEY, 
     `name` VARCHAR(20),
     `description` VARCHAR(300),
