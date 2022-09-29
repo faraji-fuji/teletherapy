@@ -157,4 +157,28 @@ alert("Wrong Username or Password!");
 </script>
 EOT;
 
-// echo $db->error;
+
+// service table
+// create service table
+$sql = "CREATE TABLE `service` (
+    `id` INT AUTO_INCREMENT PRIMARY KEY, 
+    `name` VARCHAR(20),
+    `description` VARCHAR(300),
+    `image` VARCHAR(50)
+)";
+
+$db->query($sql);
+
+// function to insert into service table
+function insert_service($name, $description, $image)
+{
+    global $db;
+
+    $sql = "INSERT INTO `service`(`id`,`name`,`description`,`image`) VALUES (NULL, '$name', '$description', '$image')";
+    $res = $db->query($sql);
+    if ($res) {
+    } else {
+        echo $db->error;
+        echo $db->errno;
+    }
+}

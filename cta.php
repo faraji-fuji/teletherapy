@@ -1,7 +1,6 @@
 <div id="preview" class="preview">
     <div style="display: none;"></div>
-    <div style="">
-
+    <div>
         <div id="preview" class="preview">
             <div style="display: none;"></div>
             <div>
