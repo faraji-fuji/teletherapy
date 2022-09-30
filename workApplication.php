@@ -1,7 +1,7 @@
 <!-- Section: Work With Us -->
 <section class="text-center">
     <!-- Background image -->
-    <div class="p-5 bg-image" style="background-image: url('images/lgbtqcropped.jpg'); height: 300px;"></div>
+    <div class="p-5 bg-image" style="background-image: url('assets/images/lgbtqcropped.jpg'); height: 300px;"></div>
     <!-- Background image -->
     <div class="card mx-4 mx-md-5 shadow-5-strong" style="margin-top: -100px; background: hsla(0, 0%, 100%, 0.8); backdrop-filter: blur(30px);">
         <div class="card-body py-5 px-md-5">
@@ -9,18 +9,18 @@
                 <div class="col-lg-8">
                     <h2 class="fw-bold mb-5">WORK WITH US</h2>
 
-                    <form enctype="multipart/form-data" method="POST" action="undergraduate_application.php">
+                    <form enctype="multipart/form-data" method="POST" action="work.php">
                         <!-- 2 column grid layout with text inputs for the first and last names -->
                         <div class="row">
                             <div class="col-md-6 mb-4">
                                 <div class="form-outline">
-                                    <input type="text" name="first_name" id="validationDefault01" class="form-control" required />
+                                    <input type="text" name="firstName" id="validationDefault01" class="form-control" required />
                                     <label class="form-label" for="validationDefault01">First name</label>
                                 </div>
                             </div>
                             <div class="col-md-6 mb-4">
                                 <div class="form-outline">
-                                    <input type="text" name="last_name" id="validationDefault02" class="form-control" required />
+                                    <input type="text" name="lastName" id="validationDefault02" class="form-control" required />
                                     <label class="form-label" for="validationDefault02">Last name</label>
                                 </div>
                             </div>
@@ -28,13 +28,13 @@
 
                         <!-- ID Number -->
                         <div class="form-outline mb-4">
-                            <input type="tel" name="national_id" id="validationDefault03" placeholder="" class="form-control" required />
+                            <input type="tel" name="nationalId" id="validationDefault03" placeholder="" class="form-control" required />
                             <label class="form-label" for="validationDefault03">National ID Number</label>
                         </div>
 
                         <!-- DOB -->
                         <div class="form-outline mb-4">
-                            <input type="date" name="date_of_birth" id="validationDefault04" placeholder="" class="form-control" required />
+                            <input type="date" name="dateOfBirth" id="validationDefault04" placeholder="" class="form-control" required />
                             <label class="form-label" for="validationDefault04">DATE OF BIRTH</label>
                         </div>
 
@@ -51,13 +51,13 @@
 
                         <!-- Email input -->
                         <div class="form-outline mb-4">
-                            <input type="email" name="email_address" id="validationDefault05" class="form-control" required />
+                            <input type="email" name="emailAddress" id="validationDefault05" class="form-control" required />
                             <label class="form-label" for="validationDefault05">Email address</label>
                         </div>
 
                         <!-- Phone Number -->
                         <div class="form-outline mb-4">
-                            <input type="tel" name="phone_number" id="validationDefault06" placeholder="254" class="form-control" required />
+                            <input type="tel" name="phoneNumber" id="validationDefault06" placeholder="254" class="form-control" required />
                             <label class="form-label" for="validationDefault06">Phone Number</label>
                         </div>
 
@@ -89,7 +89,7 @@
                         <!-- willing to work 24hrs -->
                         <div class="mb-4">
                             <label for="inputState4" class="form-label">Are you willing to work on a 24 hour basis?</label>
-                            <select id="inputState4" class="form-select" name="work_hours">
+                            <select id="inputState4" class="form-select" name="workHours">
                                 <option selected>--SELECT--</option>
                                 <option>YES</option>
                                 <option>NO</option>
@@ -127,16 +127,16 @@
 
 if (isset($_POST['submit'])) {
     // get user data from the form and sanitize
-    $first_name = $_POST['first_name'];
-    $last_name = $_POST['last_name'];
-    $national_id = $_POST['national_id'];
-    $date_of_birth = $_POST['date_of_birth'];
+    $firstName = $_POST['firstName'];
+    $lastName = $_POST['lastName'];
+    $nationalId = $_POST['nationalId'];
+    $dateOfBirth = $_POST['dateOfBirth'];
     $gender = $_POST['gender'];
-    $email_address = $_POST['email_address'];
-    $phone_number = $_POST['phone_number'];
+    $emailAddress = $_POST['emailAddress'];
+    $phoneNumber = $_POST['phoneNumber'];
     $laptop = $_POST['laptop'];
     $proficiency = $_POST['proficiency'];
-    $work_hours = $_POST['work_hours'];
+    $workHours = $_POST['workHours'];
     $motivation = $_POST['motivation'];
     $resume = $_FILES['userfile']['name'];
 
@@ -146,17 +146,17 @@ if (isset($_POST['submit'])) {
     $status = move_uploaded_file($_FILES['userfile']['tmp_name'], $destination);
 
     // save user data into job application table
-    $status = insert_into_jobapplication(
-        $first_name,
-        $last_name,
-        $national_id,
-        $date_of_birth,
+    $status = insertJobApplication(
+        $firstName,
+        $lastName,
+        $nationalId,
+        $dateOfBirth,
         $gender,
-        $email_address,
-        $phone_number,
+        $emailAddress,
+        $phoneNumber,
         $laptop,
         $proficiency,
-        $work_hours,
+        $workHours,
         $motivation,
         $resume
     );

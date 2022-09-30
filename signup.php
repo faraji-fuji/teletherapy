@@ -1,13 +1,13 @@
 <?php
-include("header.php");
-include("navbar.php");
+include("head.php");
+include("connect.php");
 ?>
 
 <!-- Section: Sign Up -->
 <section class="text-center">
 
     <!-- Background image -->
-    <div class="p-5 bg-image" style="background-image: url('images/lgbtqcropped.jpg'); height: 300px;"></div>
+    <div class="p-5 bg-image" style="background-image: url('assets/images/lgbtqcropped.jpg'); height: 300px;"></div>
     <!-- Background image -->
 
     <div class="card mx-4 mx-md-5 shadow-5-strong" style="margin-top: -100px; background: hsla(0, 0%, 100%, 0.8); backdrop-filter: blur(30px);">
@@ -74,7 +74,7 @@ if (isset($_POST['sign_up'])) {
     $email_address = $_POST['email_address'];
     $password = $_POST['password'];
 
-    $signup_status = insert_into_client(
+    $signup_status = insertClient(
         $first_name,
         $last_name,
         $email_address,

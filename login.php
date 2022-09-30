@@ -1,6 +1,7 @@
 <?php
-include("header.php");
-include("navbar.php");
+session_start();
+include("head.php");
+include("connect.php");
 ?>
 
 <!-- Section: Login -->
@@ -28,12 +29,12 @@ include("navbar.php");
                         <form action="login.php" method="POST">
                             <!-- Email input -->
                             <div class="form-outline mb-4">
-                                <input type="email" name="email_address" id="validationDefault01" class="form-control" required />
+                                <input type="email" name="emailAddress" id="validationDefault01" class="form-control" required />
                                 <label class="form-label" for="validationDefault01">Email address</label>
                             </div>
                             <!-- Password input -->
                             <div class="form-outline mb-4">
-                                <input type="password" name="user_password" id="validationDefault02" class="form-control" required />
+                                <input type="password" name="userPassword" id="validationDefault02" class="form-control" required />
                                 <label class="form-label" for="validationDefault02">Password</label>
                             </div>
                             <!-- Submit button -->
@@ -52,7 +53,7 @@ include("navbar.php");
 
             <!-- image -->
             <div class="col-lg-6 mb-5 mb-lg-0">
-                <img src="images/sydney-rae-geM5lzDj4Iw-unsplash.jpg" class="w-100 rounded-4 shadow-4" alt="" />
+                <img src="assets/images/sydney-rae-geM5lzDj4Iw-unsplash.jpg" class="w-100 rounded-4 shadow-4" alt="" />
             </div>
             <!-- image -->
 
@@ -65,15 +66,22 @@ include("navbar.php");
 <?php
 
 if (isset($_POST['submit'])) {
-    $submitted_email = $_POST['email_address'];
-    $submitted_password = $_POST['user_password'];
+    $submitted_email = $_POST['emailAddress'];
+    $submitted_password = $_POST['userPassword'];
 
     // verify user
-    $verification_status = verify_user($submitted_email, $submitted_password);
+    $verification_status = verifyUser($submitted_email, $submitted_password);
     if ($verification_status) {
-        echo '<script type="text/javascript">';
-        echo 'window.location.href = "index.php"';
-        echo '</script>';
+
+        if ($submitted_email == "admin@teletherapy.com") {
+            echo '<script type="text/javascript">';
+            echo 'window.location.href = "admin/admin.php"';
+            echo '</script>';
+        } else {
+            echo '<script type="text/javascript">';
+            echo 'window.location.href = "index.php"';
+            echo '</script>';
+        }
     } else {
         echo $login_fail;
     }

@@ -4,121 +4,185 @@ $db_user_name = "root";
 $db_password = "";
 $db_name = "therapy";
 
-// mysql queries to create relevant tables
-// signup
-$query_create_table_signup = "CREATE TABLE IF NOT EXISTS `client` (
-    first_name VARCHAR(50),
-    last_name VARCHAR(50),
-    email_address VARCHAR(30) PRIMARY KEY,
-    `password` VARCHAR(50)
-    )";
-
-// job application
-$query_create_table_job_application = "CREATE TABLE IF NOT EXISTS `job_application` (
-first_name VARCHAR(50),
-last_name VARCHAR(50),
-national_id VARCHAR(12) PRIMARY KEY,
-date_of_birth DATE,
-gender VARCHAR(20),
-email_address VARCHAR(30),
-phone_number VARCHAR(12),
-laptop VARCHAR(10),
-proficiency VARCHAR(50),
-work_hours VARCHAR(10),
-motivation VARCHAR(300),
-`resume` VARCHAR(100),
-`status` INT
-)";
-
-//connection to the database
+//database instance
 $db = new mysqli($db_server_name, $db_user_name, $db_password, $db_name);
 
-//Create relevant tables
-$db->query($query_create_table_signup);
-$db->query($query_create_table_job_application);
+// client table
+// create client table
+$sql = "CREATE TABLE IF NOT EXISTS `client` (
+    `firstName` VARCHAR(50),
+    `lastName` VARCHAR(50),
+    `emailAddress` VARCHAR(50) UNIQUE,
+    `password` VARCHAR(50),
+    `id` INT AUTO_INCREMENT PRIMARY KEY,
+    `createdAt` DATETIME DEFAULT CURRENT_TIMESTAMP
+)";
 
-//functions to insert data into the relevant tables
-function insert_into_client(
-    $first_name,
-    $last_name,
-    $email_address,
+$db->query($sql);
+
+// function to insert into client table
+function insertClient(
+    $firstName,
+    $lastName,
+    $emailAddress,
     $password
 ) {
     global $db;
-    $result = $db->query(
-        "INSERT INTO `client` (
-        `first_name`, 
-        `last_name`, 
-        `email_address`, 
+
+    $sql = "INSERT INTO 
+    `client` (
+        `firstName`,
+        `lastName`, 
+        `emailAddress`, 
         `password`
-        ) VALUES(
-            '$first_name', 
-            '$last_name', 
-            '$email_address', 
+        ) 
+        VALUES(
+            '$firstName', 
+            '$lastName', 
+            '$emailAddress', 
             '$password'
-            )"
-    );
-    return $result;
+        )";
+
+    $result = $db->query($sql);
+    if ($result) {
+        return $result;
+    } else {
+        echo $db->error;
+        return $result;
+    }
 }
 
-function insert_into_jobapplication(
-    $first_name,
-    $last_name,
-    $national_id,
-    $date_of_birth,
+// service table
+// create service table
+$sql = "CREATE TABLE IF NOT EXISTS `service` (
+    `id` INT AUTO_INCREMENT PRIMARY KEY, 
+    `name` VARCHAR(20),
+    `description` VARCHAR(300),
+    `image` VARCHAR(50),
+    `createdAt` DATETIME DEFAULT CURRENT_TIMESTAMP
+)";
+
+$db->query($sql);
+
+// function to insert into service table
+function insertService($name, $description, $image)
+{
+    global $db;
+
+    $sql = "INSERT INTO `service`(
+        `name`,
+        `description`,
+        `image`
+        ) VALUES (
+            '$name', 
+            '$description', 
+            '$image'
+        )";
+
+    $result = $db->query($sql);
+    if ($result) {
+        return $result;
+    } else {
+        echo $db->error;
+        return $result;
+    }
+}
+
+// job application table
+// create
+$sql = "CREATE TABLE IF NOT EXISTS `jobApplication` (
+    `firstName` VARCHAR(50),
+    `lastName` VARCHAR(50),
+    `nationalId` VARCHAR(12) PRIMARY KEY,
+    `dateOfBirth` DATE,
+    `gender` VARCHAR(20),
+    `emailAddress` VARCHAR(30),
+    `phoneNumber` VARCHAR(12),
+    `laptop` VARCHAR(10),
+    `proficiency` VARCHAR(50),
+    `workHours` VARCHAR(10),
+    `motivation` VARCHAR(300),
+    `resume` VARCHAR(100),
+    `status` INT,
+    `createdAt` DATETIME DEFAULT CURRENT_TIMESTAMP
+    )";
+
+$db->query($sql);
+
+// function to insert into job application table
+function insertJobApplication(
+    $firstName,
+    $lastName,
+    $nationalId,
+    $dateOfBirth,
     $gender,
-    $email_address,
-    $phone_number,
+    $emailAddress,
+    $phoneNumber,
     $laptop,
     $proficiency,
-    $work_hours,
+    $workHours,
     $motivation,
     $resume
 ) {
     global $db;
-    $result = $db->query(
-        "INSERT INTO `job_application` (
-        `first_name`, 
-        `last_name`,
-        `national_id`,
-        `date_of_birth`, 
+
+    $sql = "INSERT INTO `jobApplication` (
+        `firstName`, 
+        `lastName`,
+        `nationalId`,
+        `dateOfBirth`, 
         `gender`, 
-        `email_address`,
-        `phone_number`,
+        `emailAddress`,
+        `phoneNumber`,
         `laptop`,
         `proficiency`,
-        `work_hours`,
+        `workHours`,
         `motivation`, 
         `resume`,
-        `status`
+        `status`,
+        `createdAt`
         ) VALUES (
-            '$first_name',
-            '$last_name',
-            '$national_id',
-            '$date_of_birth',
+            '$firstName',
+            '$lastName',
+            '$nationalId',
+            '$dateOfBirth',
             '$gender',
-            '$email_address',
-            '$phone_number',
+            '$emailAddress',
+            '$phoneNumber',
             '$laptop',
             '$proficiency',
-            '$work_hours',
+            '$workHours',
             '$motivation',
             '$resume',
             0
-            )"
-    );
-    return $result;
+            )";
+
+    $result = $db->query($sql);
+    if ($result) {
+        return $result;
+    } else {
+        echo $db->error;
+        return $result;
+    }
 }
 
+
+// functionalities
 //function to verify users
-function  verify_user($submitted_email, $submitted_password)
+function  verifyUser($submittedEmail, $submittedPassword)
 {
     global $db;
-    $result = $db->query("SELECT * FROM `client` WHERE `email_address` = '$submitted_email'");
+    $result = $db->query("SELECT * FROM `client` WHERE `emailAddress` = '$submittedEmail'");
     $row = $result->fetch_assoc();
-    if ($submitted_password == $row['password']) {
+    if ($submittedPassword == $row['password']) {
+        $_SESSION['firstName'] = $row['firstName'];
+        $_SESSION['lastName'] = $row['lastName'];
+        $_SESSION['emailAddress'] = $row['emailAddress'];
+        $_SESSION['loginStatus'] = TRUE;
         return 1;
-    } else return 0;
+    } else {
+        return 0;
+    }
 }
 
 
@@ -152,29 +216,3 @@ $login_fail = <<< EOT
 alert("Wrong Username or Password!");
 </script>
 EOT;
-
-
-// service table
-// create service table
-$sql = "CREATE TABLE IF NOT EXISTS `service` (
-    `id` INT AUTO_INCREMENT PRIMARY KEY, 
-    `name` VARCHAR(20),
-    `description` VARCHAR(300),
-    `image` VARCHAR(50)
-)";
-
-$db->query($sql);
-
-// function to insert into service table
-function insert_service($name, $description, $image)
-{
-    global $db;
-
-    $sql = "INSERT INTO `service`(`id`,`name`,`description`,`image`) VALUES (NULL, '$name', '$description', '$image')";
-    $res = $db->query($sql);
-    if ($res) {
-    } else {
-        echo $db->error;
-        echo $db->errno;
-    }
-}

@@ -1,3 +1,22 @@
+<?php
+$_SESSION['loginStatus'];
+
+// button visibility
+$logingStatus = $_SESSION['loginStatus'];
+if ($logingStatus) {
+    $visibility = "visually-hidden";
+} else {
+    $visibility = "";
+}
+
+$logingStatus = $_SESSION['loginStatus'];
+if ($logingStatus) {
+    $visibility1 = "";
+} else {
+    $visibility1 = "visually-hidden";
+}
+?>
+
 <!--Main Navigation-->
 <header>
     <!-- Sidebar -->
@@ -5,7 +24,7 @@
         <div class="position-sticky">
             <div class="list-group list-group-flush mx-3 mt-4">
 
-                <a href="#" class="list-group-item list-group-item-action py-2 ripple" aria-current="true">
+                <a href="admin.php" class="list-group-item list-group-item-action py-2 ripple" aria-current="true">
                     <i class="fas fa-tachometer-alt fa-fw me-3"></i>
                     <span>Main dashboard</span>
                 </a>
@@ -62,10 +81,14 @@
                         <!-- Right elements -->
                         <div class="d-flex align-items-center">
                             <a href="login.php">
-                                <button type="button" class="btn btn-link px-3 mb-1 me-2" aria-controls="#picker-editor">Login</button>
+                                <button type="button" class="btn btn-link px-3 mb-1 me-2 <?= $visibility ?>" aria-controls="#picker-editor">Login</button>
                             </a>
                             <a href="signup.php">
-                                <button type="button" class="btn btn-primary mb-1 me-lg-3" aria-controls="#picker-editor">Sign up</button>
+                                <button type="button" class="btn btn-primary mb-1 me-lg-3 <?= $visibility ?>" aria-controls="#picker-editor">Sign up</button>
+                            </a>
+
+                            <a href="../logout.php">
+                                <button type="button" class="btn btn-primary mb-1 me-lg-3 <?= $visibility1 ?>" aria-controls="#picker-editor">Logout</button>
                             </a>
                         </div>
                         <!-- Toggle button -->

@@ -6,7 +6,7 @@
     <div class="card-body py-5 px-md-5">
         <div class="row d-flex justify-content-center">
             <div class="col-lg-10">
-                <form enctype="multipart/form-data" action="addService.php" method="POST">
+                <form enctype="multipart/form-data" action="services.php" method="POST">
 
                     <!-- Name input -->
                     <div class="form-outline mb-4">
@@ -69,7 +69,7 @@ if (isset($_POST['add'])) {
     // sanitize and validate external input
 
     // store data in persistent storage(database)
-    $status = insert_service($name, $description, $image);
+    $status = insertService($name, $description, $image);
     if ($status) {
         // added successfuly
     } else {
