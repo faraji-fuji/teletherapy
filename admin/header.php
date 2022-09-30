@@ -34,6 +34,16 @@ if ($logingStatus) {
                     <span>Services</span>
                 </a>
 
+                <a href="therapist.php" class="list-group-item list-group-item-action py-2 ripple">
+                    <i class="fas fa-plus fa-fw me-3"></i>
+                    <span>Therapists</span>
+                </a>
+
+                <a href="application.php" class="list-group-item list-group-item-action py-2 ripple">
+                    <i class="fas fa-plus fa-fw me-3"></i>
+                    <span>Applications</span>
+                </a>
+
             </div>
         </div>
     </nav>

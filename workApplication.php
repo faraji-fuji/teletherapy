@@ -141,7 +141,7 @@ if (isset($_POST['submit'])) {
     $resume = $_FILES['userfile']['name'];
 
     // upload resume
-    $uploads_dir = "resumes/";
+    $uploads_dir = "assets/resumes/";
     $destination = $uploads_dir . $_FILES['userfile']['name'];
     $status = move_uploaded_file($_FILES['userfile']['tmp_name'], $destination);
 

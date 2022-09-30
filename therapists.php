@@ -1,6 +1,6 @@
 <?php
+include("head.php");
 include("header.php");
-include("navbar.php");
 
 // Get category id from GET
 $category_id = $_GET['category'];

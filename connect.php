@@ -139,8 +139,7 @@ function insertJobApplication(
         `workHours`,
         `motivation`, 
         `resume`,
-        `status`,
-        `createdAt`
+        `status`
         ) VALUES (
             '$firstName',
             '$lastName',
@@ -184,6 +183,15 @@ function  verifyUser($submittedEmail, $submittedPassword)
         return 0;
     }
 }
+
+
+
+// therapist table
+// create
+$sql = "CREATE TABLE IF NOT EXISTS `therapist`(
+    `id`,
+    `availability`
+)";
 
 
 //js alerts
