@@ -59,6 +59,12 @@ $status = $row['status'];
                         </ul>
                     </div>
                 </div>
+
+                <div class="card shadow mt-2 mb-4 mb-lg-0">
+                    <div class="card-body p-0">
+                        <div class="btn"><i class="fa-download"></i></div>
+                    </div>
+                </div>
             </div>
             <div class="col-lg-8">
                 <div class="card shadow mb-4">
