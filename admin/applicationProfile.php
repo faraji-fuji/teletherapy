@@ -30,7 +30,6 @@ $status = $row['status'];
 
 <section>
     <div class="container  bg-light">
-
         <div class="row">
             <div class="col-lg-4">
                 <div class="card shadow mb-4">
@@ -38,7 +37,11 @@ $status = $row['status'];
                         <h5 class="my-3"><?= $firstName . " " . $lastName ?></h5>
                         <p class="text-muted mb-1"><?= $proficiency ?></p>
                         <div class="d-flex justify-content-center mb-2">
-                            <button type="button" class="btn btn-primary">Approve</button>
+
+                            <a href="#?nationalId=<?= $nationalId ?>">
+                                <button type="button" class="btn btn-primary">Approve</button>
+                            </a>
+
                             <button type="button" class="btn btn-outline-primary ms-1">Reject</button>
                         </div>
                     </div>
@@ -61,8 +64,10 @@ $status = $row['status'];
                 </div>
 
                 <div class="card shadow mt-2 mb-4 mb-lg-0">
+
                     <div class="card-body p-0">
-                        <div class="btn"><i class="fa-download"></i></div>
+
+                        <div class="btn"><i class="fa fa-download"></i></div>
                     </div>
                 </div>
             </div>
@@ -174,4 +179,15 @@ $status = $row['status'];
     </div>
 </section>
 
-<?php include("footer.php"); ?>
+<?php
+
+if (isset($_GET['nationalId'])) {
+    // 
+    insertTherapist($nationalId);
+
+    // update job application status
+    $sql = "UPDATE `jobapplication` SET `status` = '1' WHERE `jobapplication`.`nationalId` = '$nationalId'";
+    $db->query($sql);
+}
+
+include("footer.php"); ?>

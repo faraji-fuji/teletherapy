@@ -3,7 +3,9 @@ include("head.php");
 include("header.php");
 include("../connect.php");
 
-$sql = "SELECT `firstName`, `lastName`, `emailAddress`, `proficiency`, `nationalId` FROM `jobapplication`";
+$sql = "SELECT `nationalId` FROM ";
+
+$sql = "SELECT `firstName`, `lastName`, `emailAddress`, `proficiency`, `nationalId` FROM `jobapplication` WHERE `status` = 1";
 $result = $db->query($sql);
 
 ?>
@@ -31,7 +33,7 @@ $result = $db->query($sql);
             $proficiency = $applicant['proficiency'];
             $nationalId = $applicant['nationalId'];
 
-            include("applicationItem.php");
+            include("therapistItem.php");
         }
 
         ?>

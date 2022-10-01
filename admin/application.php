@@ -3,7 +3,7 @@ include("head.php");
 include("header.php");
 include("../connect.php");
 
-$sql = "SELECT `firstName`, `lastName`, `emailAddress`, `proficiency`, `nationalId` FROM `jobapplication`";
+$sql = "SELECT `firstName`, `lastName`, `emailAddress`, `proficiency`, `nationalId` FROM `jobapplication`  WHERE `status` = 0";
 $result = $db->query($sql);
 
 ?>

@@ -183,6 +183,34 @@ function insertJobApplication(
 }
 
 
+
+// therapist table
+// create
+$sql = "CREATE TABLE IF NOT EXISTS `therapist`(
+    `id` INT AUTO_INCREMENT PRIMARY KEY,
+    `status` INT DEFAULT 0,
+    `nationalId` INT,
+    `createdAt` DATETIME DEFAULT CURRENT_TIMESTAMP
+)";
+
+$db->query($sql);
+
+// function to insert data
+function insertTherapist($nationalId)
+{
+    global $db;
+
+    $sql = "INSERT INTO `therapist`(`nationalId`) VALUES ('$nationalId')";
+    $result = $db->query($sql);
+
+    if (!($result)) {
+        echo $db->error;
+        return $result;
+    } else {
+        return $result;
+    }
+}
+
 // functionalities
 //function to verify users
 function  verifyUser($submittedEmail, $submittedPassword)
@@ -203,12 +231,12 @@ function  verifyUser($submittedEmail, $submittedPassword)
 
 
 
-// therapist table
-// create
-$sql = "CREATE TABLE IF NOT EXISTS `therapist`(
-    `id`,
-    `availability`
-)";
+
+
+
+
+
+
 
 
 //js alerts
